@@ -31,6 +31,12 @@ class _StoryPageState extends State<StoryPage> {
       body: Container(
         // ignore: todo
         //TODO: Step 1 - Add background.png to this Container as a background image.
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('images/background.png'),
+            fit: BoxFit.cover,
+          ),
+        ),
         padding: const EdgeInsets.symmetric(vertical: 50.0, horizontal: 15.0),
         constraints: const BoxConstraints.expand(),
         child: SafeArea(
