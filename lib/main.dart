@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'story_brain.dart';
 // ignore: todo
 //TODO: Step 15 - Run the app and see if you can see the screen update with the first story. Delete this TODO if it looks as you expected.
 
@@ -24,6 +24,8 @@ class StoryPage extends StatefulWidget {
   _StoryPageState createState() => _StoryPageState();
 }
 
+var storyBrain = StoryBrain();
+
 class _StoryPageState extends State<StoryPage> {
   @override
   Widget build(BuildContext context) {
@@ -41,19 +43,19 @@ class _StoryPageState extends State<StoryPage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-              const Expanded(
+              Expanded(
                 flex: 12,
                 child: Center(
                   child: Text(
-                    // ignore: todo
-                    //TODO: Step 10 - use the storyBrain to get the first story title and display it in this Text Widget.
-                    'Story text will go here.',
-                    style: TextStyle(
+                    storyBrain.getStory(),
+                    style: const TextStyle(
                       fontSize: 25.0,
                     ),
                   ),
                 ),
               ),
+
+              //Choice 1 Button.
               Expanded(
                 flex: 2,
                 child: FlatButton(
